@@ -1,0 +1,91 @@
+<resources>
+
+    <!--5.0（含5.0）以上基本主题-->
+    <style name="base_app_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowContentTransitions">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:statusBarColor">@android:color/holo_red_light</item>
+        <item name="android:navigationBarColor">@android:color/holo_red_light</item>
+    </style>
+
+    <!--[Activity主题 透明度]-->
+    <style name="activity_theme_alpha" parent="base_app_theme">
+        <item name="android:windowAnimationStyle">@style/activity_anim_alpha</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+
+    <!--[Activity主题 缩放]-->
+    <style name="activity_theme_scale" parent="base_app_theme">
+        <item name="android:windowAnimationStyle">@style/activity_anim_scale</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <!--[Activity主题]Activity使用Dilaog主题-->
+    <style name="activity_theme_dialog_bottom2top" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:colorBackground">@color/half_transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowActionBar">false</item>
+        <!--垂直-->
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowAnimationStyle">@style/activity_anim_bottom_to_top</item>
+
+        <!--设置Dialog的windowFrame框为无-->
+        <item name="android:windowFrame">@null</item>
+        <!--设置无标题-->
+        <item name="windowNoTitle">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--设置窗口内容不覆盖-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--windowTranslucentNavigation  true:表示使用导航栏区域，虚拟控件在布局之上-->
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:statusBarColor">@android:color/holo_blue_light</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:navigationBarColor">@android:color/holo_red_light</item>
+    </style>
+
+    <!--[Activity主题]Activity底部弹出底部退出主题-->
+    <style name="activity_theme_bottom2top" parent="base_app_theme">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/activity_anim_bottom2top</item>
+    </style>
+
+    <!--[Activity主题]左进右出主题动画-->
+    <style name="activity_theme_right_int_out" parent="base_app_theme">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/activity_anim_right_in_right_out</item>
+        <!--windowTranslucentNavigation  true:表示使用导航栏区域，虚拟控件在布局之上
+        windowTranslucentStatus  true:表示使用状态栏区域，状态栏布局之上
+        statusBarColor 5.0(Api21)才可以设置
+        navigationBarColor 5.0才可以设置
+        windowTranslucentNavigation为false navigationBarColor设置的颜色才会有效
+        windowTranslucentStatus为false statusBarColor设置的颜色才会有效
+        -->
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:statusBarColor">@android:color/holo_blue_light</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:navigationBarColor">@android:color/holo_blue_light</item>
+    </style>
+
+
+</resources>

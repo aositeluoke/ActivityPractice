@@ -1,0 +1,109 @@
+<resources>
+
+    <!--4.4之前基本主题(4.1测试没问题)-->
+    <style name="base_app_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="app_theme" parent="base_app_theme" />
+
+    <!--[Activity主题 缩放]-->
+    <style name="activity_theme_scale" parent="base_app_theme">
+        <item name="android:windowAnimationStyle">@style/activity_anim_scale</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--[Activity主题 透明度]-->
+    <style name="activity_theme_alpha" parent="base_app_theme">
+        <item name="android:windowAnimationStyle">@style/activity_anim_alpha</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--[Activity主题]Activity使用Dilaog主题-->
+    <style name="activity_theme_dialog_bottom2top" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:colorBackground">@color/half_transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowActionBar">false</item>
+        <!--垂直-->
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowAnimationStyle">@style/activity_anim_bottom_to_top</item>
+
+        <!--设置Dialog的windowFrame框为无-->
+        <item name="android:windowFrame">@null</item>
+        <!--设置无标题-->
+        <item name="windowNoTitle">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--设置窗口内容不覆盖-->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--[Activity主题]Activity底部弹出底部退出主题-->
+    <style name="activity_theme_bottom2top" parent="base_app_theme">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/activity_anim_bottom2top</item>
+    </style>
+
+    <!--[Activity主题]右进右出主题动画-->
+    <style name="activity_theme_right_int_out" parent="base_app_theme">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/activity_anim_right_in_right_out</item>
+    </style>
+
+
+    <!--[Activity主题]启动页SplashActivity的主题-->
+    <style name="activity_theme_splash" parent="base_app_theme">
+        <item name="android:windowBackground">@drawable/ic_splash</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <!--==============================Activity动画====================================-->
+    <!--[Activity动画] 类似dialog-->
+    <style name="activity_anim_bottom_to_top">
+        <item name="android:windowExitAnimation">@anim/activity_dialog_bottom_out</item>
+        <item name="android:windowEnterAnimation">@anim/activity_dialog_bottom_in</item>
+    </style>
+
+
+    <!--[Activity动画 右进右出]-->
+    <style name="activity_anim_right_in_right_out">
+        <item name="android:windowEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_right_out</item>
+    </style>
+
+    <!--[Activity动画 底部弹出底部退出]-->
+    <style name="activity_anim_bottom2top">
+        <item name="android:windowEnterAnimation">@anim/activity_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/activity_bottom_out</item>
+    </style>
+
+
+    <!--[Activity动画 缩放]-->
+    <style name="activity_anim_scale">
+        <item name="android:windowExitAnimation">@anim/scale_out</item>
+        <item name="android:windowEnterAnimation">@anim/scale_in</item>
+    </style>
+
+
+    <!--[Activity动画 透明度]-->
+    <style name="activity_anim_alpha">
+        <item name="android:windowExitAnimation">@anim/alpha_out</item>
+        <item name="android:windowEnterAnimation">@anim/alpha_in</item>
+    </style>
+
+
+</resources>
