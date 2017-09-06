@@ -18,6 +18,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.FormatStrategy;
+import com.orhanobut.logger.Logger;
+import com.orhanobut.logger.PrettyFormatStrategy;
+
 import java.lang.reflect.Method;
 import java.util.List;
 
@@ -31,6 +36,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
+                .showThreadInfo(false)  // (Optional) Whether to show thread info or not. Default true
+                .methodCount(0)         // (Optional) How many method line to show. Default 2
+                .methodOffset(7)        // (Optional) Hides internal method calls up to offset. Default 5
+                .tag("My custom tag")   // (Optional) Global tag for every log. Default PRETTY_LOGGER
+                .build();
+        Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy));
 
        /*
        * MainActivity(HomeFragment CategoryFragment CartFragment MineFragment)沉浸式状态栏方案
@@ -85,8 +97,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_left2right:
-                navigationBar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+//                navigationBar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 startActivity(new Intent(this, RightInRightOutActivity.class));
+//                String jsonStr = "{\"age\"=14,\"type\"=1,\"name\"=\"徐恩晟\"}";
+//                Logger.json(jsonStr);
                 break;
             case R.id.btn_dialog_activity:
                 navigationBar.setBackgroundColor(Color.parseColor("#ff0000"));
